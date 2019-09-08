@@ -14,29 +14,3 @@ This app has not the UI (shows a hello world text). The entry point is the `Main
 2019-09-08 13:11:43.471 4535-4535/morg.ros.calculatorioc I/Operations_DIP: 3
 2019-09-08 13:11:43.471 4535-4535/morg.ros.calculatorioc I/Operations_DIP: 8
 ```
-### DPI
-```mermaid
-graph LR;
-
-Operations-->|uses|IMemory;
-Operations-->|implements|IOperations;
-Memory-->|implements|IMemory;
-Memory-->|uses|IOperations;
-MainActivity-->|uses|Memory;
-MainActivity-->|uses|Operations;
-
-```
-### Dagger2
-```mermaid
-graph LR;
-subgraph Calculator Module
-Operations-->CalculatorModule;
-Memory-->CalculatorModule;
-end
-
-subgraph Main Application
-CalculatorModule-->AppComponent;
-AppComponent-->MainActivity;
-end
-
-```
