@@ -19,6 +19,6 @@ public class MyApplication extends Application {
     public AppComponent getAppComponent() {
 
         return appComponent;
-        
+
     }
 }
