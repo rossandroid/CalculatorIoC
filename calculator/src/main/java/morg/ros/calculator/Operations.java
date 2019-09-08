@@ -3,9 +3,16 @@ package morg.ros.calculator;
 import android.support.annotation.Nullable;
 
 public class Operations  implements IOperations{
-    IMemory memory;
+    private IMemory memory;
 
     public Operations(){}
+
+
+    //NO DAGGER
+    public Operations(IMemory m){
+        setMemory(m);
+    }
+
 
     private Integer getValueFromMemory(@Nullable Integer b){
         if(b == null)
@@ -22,5 +29,7 @@ public class Operations  implements IOperations{
     @Override
     public void setMemory(IMemory m) { this.memory  = m; }
 
-
+    public IMemory getMemory() {
+        return memory;
+    }
 }
